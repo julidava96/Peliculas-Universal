@@ -1,0 +1,36 @@
+﻿@model PeliculasViewModel
+@{
+}
+
+<h1>Listado de Peliculas </h1>
+
+<div>
+    <a href="/pelicula/Agregarpelicula">Crear una pelicula</a>
+</div>
+
+
+
+<table class="table table-warning">
+
+    <thead>
+
+        <tr>
+            <th>Nombre de la Pelicula</th>
+            <th>Anio de estreno</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (PeliculaViewModel pelicula in Model.PeliculaList)
+        {
+            <tr>
+                <td>
+                    @pelicula.Nombre
+                </td>
+                <td>
+                    @pelicula.Anio.ToString("yyyy")
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

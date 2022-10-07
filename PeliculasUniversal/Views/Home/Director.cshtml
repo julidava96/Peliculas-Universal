@@ -1,0 +1,30 @@
+﻿@model DirectoresViewModel
+@{
+}
+<h1>Listado de Directores </h1>
+
+        <table class="table table-danger">
+        <thead>
+            <tr>
+                <th>Nombre del Director</th>
+                <th>Edad del Director </th>
+                <th>Pais de Origen</th>
+            </tr>
+        </thead>
+    <tbody>
+        @foreach (DirectorViewModel director in Model.DirectoresList)
+        {
+        <tr>
+            <td>
+                    @director.Nombre
+            </td>
+            <td>
+                    @director.Edad
+            </td>
+            <td>
+                    @director.PaisOrigen
+            </td>
+        </tr>
+        }
+</tbody>
+</table>

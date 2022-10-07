@@ -1,0 +1,38 @@
+﻿@model AgregarPeliculaViewModel
+@{
+}
+
+<div>
+    <form method="post" action="CrearPelicula">
+        @*FORM para formulario*@
+        <fieldset>
+            <legend>Agregar Peliculas</legend>
+            <div>
+                <label for="Nombre">Nombre de pelicula:</label>
+                <input type="text" name="Nombre" value="" />
+            </div>
+            <div>
+                <label for="Anio"> Anio de estreno:</label>
+                <input type="text" name="Anio" value="" />
+            </div>
+            <div>
+                <label for="IdGenero">Id del genero:</label>
+                @Html.DropDownList("IdGenero",Model.ListaGeneros)
+                
+            </div>
+            <div>
+                <label for="IdDirector">Id del director:</label>
+                <input type="text" name="IdDirector" value="" />
+            </div>
+            <div>
+                <label for="IdActor">Id del Actor:</label>
+                <input type="text" name="IdActor" value="" />
+            </div>
+
+            <div>
+                <label>&nbsp;</label>
+                <input type="submit" value="Submit" class="submit" />
+            </div>
+        </fieldset>
+    </form>
+</div>

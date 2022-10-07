@@ -1,0 +1,30 @@
+﻿@model ActoresViewModel
+@{
+}
+<h1>Listado de Actores</h1>
+
+<table class="table table-danger">
+    <thead>
+        <tr>
+            <th>Nombre del Actor</th>
+            <th>Edad del actor</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (ActorViewModel actor in Model.ActoresList)
+        {
+            <tr>
+                <td>
+                    @actor.Nombre
+                </td>
+
+                <td>
+                    @actor.edad
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
