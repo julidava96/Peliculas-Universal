@@ -6,6 +6,12 @@ namespace PeliculasUniversal.Repository
 {
     public class GeneroRepository
     {
+        private readonly SqlConnection conection;
+
+        public GeneroRepository(SqlConnection conection)
+        {
+            this.conection = conection;
+        }   
 
         public List<GeneroEntity> ListarGeneros ()
         {

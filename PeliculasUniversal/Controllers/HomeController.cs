@@ -8,10 +8,12 @@ namespace PeliculasUniversal.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly PeliculasService peliculasService;
+        public HomeController(ILogger<HomeController> logger, PeliculasService peliculasService)
         {
             _logger = logger;
+            this.peliculasService = peliculasService;
+
         }
 
         public IActionResult Index()
@@ -26,9 +28,7 @@ namespace PeliculasUniversal.Controllers
 
         public IActionResult Pelicula()
         {
-            var PeliculasService = new PeliculasService();
-
-            var peliculaListDB = PeliculasService.ObtenerPeliculas();
+            var peliculaListDB = peliculasService.ObtenerPeliculas();
 
             PeliculasViewModel pelicula2 = new PeliculasViewModel();
 
@@ -49,9 +49,8 @@ namespace PeliculasUniversal.Controllers
         public IActionResult Actor()
         {
             
-            var PeliculasService = new PeliculasService();
 
-            var actorListDB = PeliculasService.ObtenerActor();
+            var actorListDB = peliculasService.ObtenerActor();
 
             ActoresViewModel actor2 = new ActoresViewModel();
 
@@ -71,9 +70,7 @@ namespace PeliculasUniversal.Controllers
         public IActionResult Director()
         {
            
-            var PeliculasService = new PeliculasService();
-
-            var directorListDB = PeliculasService.ObtenerDirector();
+            var directorListDB = peliculasService.ObtenerDirector();
 
             DirectoresViewModel director2 = new DirectoresViewModel();
             director2.DirectoresList = new List<DirectorViewModel>();

@@ -2,36 +2,35 @@
 @{
 }
 
-<div>
+<div class="col-4">
     <form method="post" action="CrearPelicula">
         @*FORM para formulario*@
         <fieldset>
             <legend>Agregar Peliculas</legend>
             <div>
-                <label for="Nombre">Nombre de pelicula:</label>
-                <input type="text" name="Nombre" value="" />
+                <label class="form-label" for="Nombre">Nombre de pelicula:</label>
+                <input class="form-control" type="text" name="Nombre" value="" />
             </div>
             <div>
-                <label for="Anio"> Anio de estreno:</label>
-                <input type="text" name="Anio" value="" />
+                <label class ="form-label" for="Anio"> Anio de estreno:</label>
+                <input class="form-control" type="text" name="Anio" value="" />
             </div>
             <div>
-                <label for="IdGenero">Id del genero:</label>
-                @Html.DropDownList("IdGenero",Model.ListaGeneros)
+                <label class="form-label" for="IdGenero">Id del genero:</label>
+                @Html.DropDownList("IdGenero",Model.ListaGeneros, null,new {@class="form-control"})
                 
             </div>
             <div>
-                <label for="IdDirector">Id del director:</label>
-                <input type="text" name="IdDirector" value="" />
+                <label class="form-label" for="IdDirector">Id del director:</label>
+                <input class="form-control" type="text" name="IdDirector" value="" />
             </div>
             <div>
-                <label for="IdActor">Id del Actor:</label>
-                <input type="text" name="IdActor" value="" />
+                <label class="form-label" for="IdActor">Id del Actor:</label>
+                <input class="form-control" type="text" name="IdActor" value="" />
             </div>
 
-            <div>
-                <label>&nbsp;</label>
-                <input type="submit" value="Submit" class="submit" />
+            <div class="mt-3">
+                <input class="btn btn-primary" type="submit" value="Submit"/>
             </div>
         </fieldset>
     </form>

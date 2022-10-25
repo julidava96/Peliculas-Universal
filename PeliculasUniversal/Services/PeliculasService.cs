@@ -7,7 +7,15 @@ using System.Data.SqlClient;
 namespace PeliculasUniversal.Services
 {
     public class PeliculasService
+
     {
+        private readonly PeliculaRepository peliculaRepository;
+        public PeliculasService(PeliculaRepository peliculaRepository)
+        {
+            this.peliculaRepository = peliculaRepository;
+        }
+
+
         public List <PeliculasEntity> ObtenerPeliculas()
         {
 
@@ -27,7 +35,6 @@ namespace PeliculasUniversal.Services
                 IdGenero = pelicula.IdGenero        
             };
 
-            PeliculaRepository peliculaRepository = new PeliculaRepository();
             peliculaRepository.InsertarPelicula(peliculaEntity);
                     
             

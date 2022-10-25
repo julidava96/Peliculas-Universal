@@ -3,13 +3,17 @@ using PeliculasUniversal.Repository;
 
 namespace PeliculasUniversal.Services
 {
-    public class GeneroService
+    public class GeneroService    
     {
+        private readonly GeneroRepository generoRepository;
+        public GeneroService(GeneroRepository generoRepository)
+        {
+            this.generoRepository = generoRepository;
+        }
         public List<GeneroEntity> ListarGeneros ()
         {
 
-            GeneroRepository repository = new GeneroRepository();
-            List<GeneroEntity> result = repository.ListarGeneros();
+            List<GeneroEntity> result = generoRepository.ListarGeneros();
             return result;
         }
 

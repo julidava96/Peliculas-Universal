@@ -7,6 +7,14 @@ namespace PeliculasUniversal.Controllers
 {
     public class PeliculaController : Controller
     {
+        private readonly PeliculasService peliculasService;
+        private readonly GeneroService generoService;
+
+        public PeliculaController(PeliculasService peliculaService, GeneroService generoService)
+        {
+            this.peliculasService = peliculaService;
+            this.generoService = generoService;
+        }
         public IActionResult Index()
         {
             return View();
@@ -15,7 +23,6 @@ namespace PeliculasUniversal.Controllers
 
         public IActionResult AgregarPelicula()
         {
-            GeneroService generoService = new GeneroService();
             var listaEntity = generoService.ListarGeneros();
              
             var model = new AgregarPeliculaViewModel();
@@ -37,7 +44,6 @@ namespace PeliculasUniversal.Controllers
         public IActionResult CrearPelicula(PeliculaViewModel pelicula)
         {
 
-            PeliculasService peliculasService = new PeliculasService();
             peliculasService.AgregarPelicula(pelicula);
 
             return View("AgregarPelicula");

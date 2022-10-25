@@ -4,40 +4,40 @@
 @{
 }
 
-<div>
+<div class="col-4">          
 <form method="post" action="CrearPelicula">
     @*FORM para formulario*@
     <fieldset>
-        <legend>Add Customer</legend>
+        <legend>Agregar Actor</legend>
         <div>
-            <label for="Id">Id del Actor:</label>
-            <input type="text" name="Id" value="" />
+            <label class="form-label "Id">Id del Actor:</label>
+            <input class="form-control" type="text" name="Id" value="" />
         </div>
         <div>
-            <label for="NombreYapellido"> Nombre y apellido del Actor:</label>
-            <input type="text" name="NombreYapellido" value="" />
+            <label class="form-label" for="NombreYapellido"> Nombre y apellido del Actor:</label>
+            <input class="form-control" type="text" name="NombreYapellido" value="" />
         </div>
         <div>
-            <label for="paisDeOrigen">Pais de Origen del Actor:</label>
-            <input type="text" name="paisDeOrigen" value="" />
+            <label class="form-label" for="paisDeOrigen">Pais de Origen del Actor:</label>
+            <input class="form-control" type="text" name="paisDeOrigen" value="" />
         </div>
         <div>
-            <label for="edad">Edad del Actor:</label>
-            <input type="text" name="edad" value="" />
+            <label class="form-label" for="edad">Edad del Actor:</label>
+            <input class="form-control" type="text" name="edad" value="" />
         </div>
-        <div>
-            <label for="Sexo">Sexo del Actor:</label>
-            <input type="text" name="Sexo" value="" />
+        <div class="dropdown">
+            <label class="form-label" for="Sexo">Sexo del Actor:</label>
+            <input class="btn btn-primary" type="text" value="" />
+@*            <input class="form-control" type="text" name="Sexo" value=""/>
+*@        </div>
+
+        <div class="form-check">
+            <label class="form-check" for="Retirado">Retirado:</label>
+            <input class="form-check" type="checkbox" name="Retirado" value="" />
         </div>
 
-        <div>
-            <label for="Retirado">Estado retirado?:</label>
-            <input type="text" name="Retirado" value="" />
-        </div>
-
-        <div>
-            <label>&nbsp;</label>
-            <input type="submit" value="Submit" class="submit" />
+        <div class="mt-3">
+            <input class="btn btn-primary" type="submit" value="Submit"/>
         </div>
     </fieldset>
 </form>
